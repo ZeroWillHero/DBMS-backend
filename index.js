@@ -20,7 +20,7 @@ const allowedOrigins = [
   'https://v0-admin-panel-development-gamma.vercel.app',
   'https://dbms-backend-3g2f.onrender.com',
   'https://www.dbms-backend-3g2f.onrender.com',
-  'https://www.ictevent.net/',
+  'https://www.ictevent.net',
 ];
 // connect to the Database
 connectDB();
