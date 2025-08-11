@@ -57,6 +57,10 @@ const userSchema = new mongoose.Schema({
     whristBandSize: {
         type: String,
         enum: ['S', 'M']
+    },
+    isAttendToClass:{
+        type: Boolean,
+        default: false
     }
 
 },{ timestamps: true  });

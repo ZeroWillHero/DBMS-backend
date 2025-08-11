@@ -34,7 +34,8 @@ const registerUser = async (req, res) => {
       email,
       paymentSlip,
       whristBandColor,
-      whristBandSize
+      whristBandSize,
+      isAttendToClass
     };
 
     // Hash and set password only if provided
