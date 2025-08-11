@@ -14,7 +14,8 @@ const registerUser = async (req, res) => {
       email, 
       password,
       whristBandColor,
-      whristBandSize
+      whristBandSize,
+      isAttendToClass
      } = req.body;
     const paymentSlip = req.fileUrl; // The URL of the uploaded image from Cloudinary
 
