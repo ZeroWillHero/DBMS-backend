@@ -17,7 +17,9 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   'https://v0-admin-panel-development-af729zgp1-zerowillheros-projects.vercel.app',
-  'https://v0-admin-panel-development-gamma.vercel.app'
+  'https://v0-admin-panel-development-gamma.vercel.app',
+  'https://dbms-backend-3g2f.onrender.com',
+  'https://www.dbms-backend-3g2f.onrender.com'
 ];
 // connect to the Database
 connectDB();
