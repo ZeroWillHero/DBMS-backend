@@ -90,7 +90,7 @@ const registerUser = async (req, res) => {
     // Send the email
     await sendEmail({
       to: email,
-      subject: 'Welcome to Arduino night',
+      subject: 'Welcome to DBMS Session',
       html: personalizedHtml
     });
 
