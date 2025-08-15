@@ -1,7 +1,12 @@
 const mongoose= require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    
+    firstname: {
+        type: String
+    },
+    lastname: {
+        type: String
+    },
     alYear: {
         type: String,
         required: true
@@ -30,10 +35,10 @@ const userSchema = new mongoose.Schema({
         enum: ['student', 'admin'],
         default: 'student'
     },
-    paymentSlip: {
-        type: String,
-        required: true
-    },
+    // paymentSlip: {
+    //     type: String,
+    //     required: true
+    // },
     verified: {
         type: Boolean,
         default: false

@@ -17,7 +17,7 @@ const registerUser = async (req, res) => {
       whristBandSize,
       isAttendToClass
      } = req.body;
-    const paymentSlip = req.fileUrl; // The URL of the uploaded image from Cloudinary
+    // const paymentSlip = req.fileUrl; // The URL of the uploaded image from Cloudinary
 
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
@@ -33,7 +33,7 @@ const registerUser = async (req, res) => {
       whatsappNumber,
       school,
       email,
-      paymentSlip,
+      // paymentSlip,
       whristBandColor,
       whristBandSize,
       isAttendToClass
