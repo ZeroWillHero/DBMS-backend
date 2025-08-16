@@ -22,10 +22,10 @@ const updateUserConfirmation = async (req, res) => {
         // 1. Generate QR code PNG
         const qrPath = await generateQRCodePng(user);
 
-        // 1.5. Resize QR code to fit ticket (e.g., 200x200)
+        // 1.5. Resize QR code to fit square box (~350x350px)
         const resizedQrPath = `./tmp/qr_resized_${user._id}.png`;
         await sharp(qrPath)
-            .resize(200, 200)
+            .resize(2100, 2100)
             .toFile(resizedQrPath);
 
         // 2. Overlay QR code on ticket background
@@ -36,8 +36,8 @@ const updateUserConfirmation = async (req, res) => {
             .composite([
                 {
                     input: resizedQrPath,
-                    top: 89,   // Adjust as needed for your design
-                    left: 700  // Adjust as needed for your design
+                    top: 5053,   // Y-position inside the white square
+                    left: 1189  // X-position inside the white square
                 }
             ])
             .toFile(ticketOutputPath);
@@ -74,6 +74,6 @@ const updateUserConfirmation = async (req, res) => {
         console.error('Error updating user confirmation:', error);
         return res.status(500).json({ message: 'Internal server error', error: error.message });
     }
-}
+};
 
 module.exports = updateUserConfirmation;

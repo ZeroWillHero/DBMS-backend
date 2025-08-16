@@ -15,7 +15,7 @@ async function generateQRCodePng(userData, outputDir = './tmp') {
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
-        const userString = JSON.stringify(userData);
+        const userString = JSON.stringify(userData._id);
 
         // Generate a unique filename
         const filename = `qr_${Date.now()}_${Math.floor(Math.random() * 10000)}.png`;
@@ -24,7 +24,7 @@ async function generateQRCodePng(userData, outputDir = './tmp') {
         // Generate QR code as PNG and save to file
         await QRCode.toFile(filePath, userString, {
             type: 'png',
-            width: 400,
+            width:1000,
             errorCorrectionLevel: 'H'
         });
 
