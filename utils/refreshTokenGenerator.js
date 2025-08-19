@@ -5,7 +5,7 @@ const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
 
 
 function generateRefreshToken(payload) {
-    return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: '3d' });
+    return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: '10d' });
 }
 
 module.exports = generateRefreshToken;

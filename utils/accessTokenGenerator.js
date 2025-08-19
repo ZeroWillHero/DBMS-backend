@@ -6,7 +6,7 @@ const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 
 function generateAccessToken(user_id, email) {
     const payload = { user_id, email };
-    return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: '4h' });
+    return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: '7d' });
 }
 
 module.exports = generateAccessToken;
