@@ -3,12 +3,13 @@ const upateQRUsage = async (req,res) => {
     console.log('markQrUsed route hit!');
     try{
         const user_id = req.body.id;
+        console.log(user_id)
 
         if (!user_id) {
             return res.status(400).json({ error: 'User ID is required' });
         }
 
-        const user = await User.findById(user_id);
+        const user = await User.findOne({ _id: user_id });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }

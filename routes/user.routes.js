@@ -16,7 +16,7 @@ const updateUserConfirmation = require('./controllers/confirmUser');
 const getUserCount = require('./controllers/getUsers').getUserCount;
 const updateQRusage = require('./controllers/updateQrUsage');
 
-router.patch('/markQrUsed',checkIsAdmin, updateQRusage);
+router.put('/update/qr',checkIsAdmin, updateQRusage);
 // Route to get the count of all users
 router.get('/count', getUserCount);
 // Route to register a new user with image upload
