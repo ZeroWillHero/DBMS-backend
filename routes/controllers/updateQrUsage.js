@@ -14,6 +14,10 @@ const upateQRUsage = async (req,res) => {
             return res.status(404).json({ error: 'User not found' });
         }
 
+        if (user.isQRUsede === true) {
+            return res.status(400).json({ error: 'QR code has already been used' });
+        }
+
         // update thhe qr is used or not 
         user.isQRUsede = true;
         await user.save();
