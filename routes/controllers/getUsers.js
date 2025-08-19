@@ -12,13 +12,15 @@ const getUsers = async (req, res) => {
             sortDir = 'asc', 
             page = 1, 
             limit = 10, 
-            search 
+            search,
+            isQRUsede,
         } = req.query;
 
         // Build filter object
         const filter = {};
         if (role) filter.role = role;
         if (verified !== undefined) filter.verified = verified === 'true';
+        if (isQRUsede !== undefined) filter.isQRUsede = isQRUsede === 'true';
 
         // Search filter
         if (search) {
@@ -52,10 +54,12 @@ const getUsers = async (req, res) => {
 
         // Total count for pagination info
         const totalUsers = await User.countDocuments(filter);
+        const qrScannedUsers = await User.countDocuments({ isQRUsede: true });
 
         res.status(200).json({
             users,
             total: totalUsers,
+            qrScannedUsers,
             page: pageNum,
             limit: limitNum,
             totalPages: Math.ceil(totalUsers / limitNum)
